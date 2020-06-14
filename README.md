@@ -1,0 +1,1 @@
+# Automated GUI-testing for Trello.com WEB-application.
