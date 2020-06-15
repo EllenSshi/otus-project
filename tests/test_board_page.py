@@ -18,6 +18,10 @@ def test_add_private_board_first_description(browser):
     assert board_page.get_board_description() == description
 
 
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("Add list on board")
+@allure.story("Add list on private board")
+@allure.title("Add list on private board")
 def test_add_list(browser):
     board_name = f"Private board {random.randint(1, 99)}"
     board_page = login_and_create_private_board(browser, board_name)
