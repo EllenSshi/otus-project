@@ -1,0 +1,21 @@
+version: '3'
+services:
+  selenoid:
+    network_mode: bridge
+    ports:
+      - "4444:4444"
+    image: aerokube/selenoid:1.10.0
+    volumes:
+      - "$PWD/selenoid:/etc/selenoid"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "$PWD/selenoid/logs:/opt/selenoid/logs"
+    command: ["-conf", "/etc/selenoid/browsers.json", "-log-output-dir", "/opt/selenoid/logs"]
+  tests:
+    network_mode: bridge
+    links:
+      - selenoid
+    image: otus_project_tests:latest
+    volumes:
+      - "$PWD/allure_report:/mydir/allure_report"
+    depends_on:
+      - selenoid
