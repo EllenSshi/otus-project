@@ -54,3 +54,7 @@ with $ cd jenkins_with_docker_compose && docker build -t jenkinsci_blueocean_dc 
     
     ![diagram](screenshots/Allure_report_with_screenshot.png)
  
+
+#
+** By default Chrome Browser was used for running tests. To add some more browsers you need to pull docker image 
+and add info about particular browser into .aerokube/selenoid/browsers.json
