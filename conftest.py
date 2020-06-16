@@ -53,8 +53,7 @@ def browser(request):
                                        "enableVideo": False,
                                        "enableLog": True
                                    },
-                                   options=options,
-                                   browser_profile=browser_profile)
+                                   options=options)
 
     browser = EventFiringWebDriver(browser, MyListener())
     browser.implicitly_wait(wait)
