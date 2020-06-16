@@ -36,29 +36,29 @@ with $ cd jenkins_with_docker_compose && docker build -t jenkinsci_blueocean_dc 
 
 ![diagram](screenshots/Pipeline_3.png)
 6. Jenkinsfile in this repository contains three stages: Build, Test and Report.
-    #### Build stage is a Jenkins Job with one 'build step' containing commands:
-    $ yes | docker system prune -a
+#### Build stage is a Jenkins Job with one 'build step' containing commands:
+$ yes | docker system prune -a
     
-    $ docker build -t otus_project_tests:latest .
+$ docker build -t otus_project_tests:latest .
     
-    Build
-    ![diagram](screenshots/Build_job_1.png)
+Build
+![diagram](screenshots/Build_job_1.png)
 
-    ![diagram](screenshots/Build_job_2.png)
+![diagram](screenshots/Build_job_2.png)
 
-    #### Test stage is a Jenkins job with the same custom workspace as Build Stage and several steps:
+#### Test stage is a Jenkins job with the same custom workspace as Build Stage and several steps:
     
-    Test
-    ![diagram](screenshots/Test_job_1.png)
+Test
+![diagram](screenshots/Test_job_1.png)
 
-    ![diagram](screenshots/Test_job_2.png)
+![diagram](screenshots/Test_job_2.png)
     
-    #### Report stage is a command for generating an allure report after tests finish.
+#### Report stage is a command for generating an allure report after tests finish.
     
-    Report
-    ![diagram](screenshots/Pipeline_status.png)
+Report
+![diagram](screenshots/Pipeline_status.png)
     
-    ![diagram](screenshots/Allure_report_with_screenshot.png)
+![diagram](screenshots/Allure_report_with_screenshot.png)
  
 
 #
