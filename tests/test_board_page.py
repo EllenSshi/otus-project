@@ -3,7 +3,7 @@ import random
 from pages.AllBoardsPage import AllBoardsPage
 from pages.BoardPage import BoardPage
 from pages.LoginPage import LoginPage
-from helpers.credentials import USERNAME, PASSWORD
+from settings.credentials import USERNAME, PASSWORD
 
 
 @allure.severity(allure.severity_level.CRITICAL)

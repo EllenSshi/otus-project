@@ -1,7 +1,7 @@
 import allure
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPage
-from helpers.credentials import USERNAME, PASSWORD
+from settings.credentials import USERNAME, PASSWORD
 
 
 @allure.severity(allure.severity_level.CRITICAL)
