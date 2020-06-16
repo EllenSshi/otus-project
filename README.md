@@ -41,18 +41,21 @@ with $ cd jenkins_with_docker_compose && docker build -t jenkinsci_blueocean_dc 
     
     $ docker build -t otus_project_tests:latest .
     
+    Build
     ![diagram](screenshots/Build_job_1.png)
 
     ![diagram](screenshots/Build_job_2.png)
 
     #### Test stage is a Jenkins job with the same custom workspace as Build Stage and several steps:
     
+    Test
     ![diagram](screenshots/Test_job_1.png)
 
     ![diagram](screenshots/Test_job_2.png)
     
     #### Report stage is a command for generating an allure report after tests finish.
     
+    Report
     ![diagram](screenshots/Pipeline_status.png)
     
     ![diagram](screenshots/Allure_report_with_screenshot.png)
