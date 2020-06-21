@@ -1,4 +1,5 @@
 import allure
+import random
 from pages.AllBoardsPage import AllBoardsPage
 from pages.AllTemplatesPage import AllTemplatesPage
 from pages.TemplatePage import TemplatePage
@@ -18,7 +19,7 @@ def test_create_board_from_tmpl(browser):
     all_templates_page = AllTemplatesPage(browser)
     all_templates_page.go_to_reading_list_template()
     template_page = TemplatePage(browser)
-    board_from_tmpl_name = "new"
+    board_from_tmpl_name = f"Board from template {random.randint(1, 99)}"
     template_page.create_board_from_tmpl(board_from_tmpl_name)
     board_page = BoardPage(browser)
     assert board_page.get_board_name() == board_from_tmpl_name

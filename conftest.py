@@ -30,7 +30,6 @@ def browser(request):
     browser_name = request.config.getoption("--browser")
     wait = request.config.getoption("--wait")
     executor = request.config.getoption("--executor")
-    browser_profile = None
     if browser_name == "chrome":
         options = ChromeOptions()
         options.headless = True
@@ -39,7 +38,6 @@ def browser(request):
     elif browser_name == "firefox":
         options = FirefoxOptions()
         options.headless = True
-        browser_profile = webdriver.FirefoxProfile()
         if not executor:
             browser = webdriver.Firefox(options=options)
     else:

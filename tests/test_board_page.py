@@ -6,7 +6,7 @@ from pages.LoginPage import LoginPage
 from settings.credentials import USERNAME, PASSWORD
 
 
-@allure.severity(allure.severity_level.CRITICAL)
+@allure.severity(allure.severity_level.NORMAL)
 @allure.feature("Edit Board")
 @allure.story("Edit private board description")
 @allure.title("Add private board first description")
