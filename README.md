@@ -1,6 +1,6 @@
 # Automated GUI-testing for Trello.com WEB-application.
 
-## Running1
+## Running
 1. $ Git clone https://github.com/EllenSshi/otus-project.git
 2. Create venv/pyenv/pipenv and/or install python3 and pip3
 3. Install requirements with $ pip install -r requirements.txt
