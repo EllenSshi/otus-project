@@ -10,3 +10,7 @@ class AllTemplatesPage(BasePage, AllTemplatesPageLocators):
     def go_to_reading_list_template(self):
         self._click(self.PERSONAL_SECTION)
         self._move_to_element(self.READING_LIST_TMPL)
+
+    def verify_page(self):
+        with allure.step(f'Verify if url is {self.url}'):
+            return self.verify_url(self.url)

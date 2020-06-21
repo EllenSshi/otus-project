@@ -21,5 +21,5 @@ def test_create_board_from_tmpl(browser):
     template_page = TemplatePage(browser)
     board_from_tmpl_name = f"Board from template {random.randint(1, 99)}"
     template_page.create_board_from_tmpl(board_from_tmpl_name)
-    board_page = BoardPage(browser)
-    assert board_page.get_board_name() == board_from_tmpl_name
+    all_boards_page.open()
+    assert all_boards_page.verify_board_presence(board_from_tmpl_name)

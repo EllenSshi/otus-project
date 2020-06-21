@@ -41,7 +41,8 @@ class BasePage(BasePageLocators):
 
     def _click(self, selector):
         with allure.step(f"Click on {selector}"):
-            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(selector)).click()
+            self.__element(selector).click()
+            # WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(selector)).click()
 
     def _get_element_attribute(self, element: WebElement, attribute: str):
         return element.get_attribute(attribute)
@@ -59,6 +60,13 @@ class BasePage(BasePageLocators):
 
     def _wait_for_visibility(self, selector, wait=20):
         return WebDriverWait(self.driver, wait).until(EC.visibility_of(self.__element(selector)))
+
+    @allure.step("Get current url")
+    def get_current_url(self):
+        return self.driver.current_url
+
+    def verify_url(self, expected_url):
+        return WebDriverWait(self.driver, 5).until(EC.url_to_be(expected_url))
 
     @allure.step("Log out")
     def logout(self):

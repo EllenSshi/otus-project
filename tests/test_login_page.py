@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPage
 from settings.credentials import USERNAME, PASSWORD
@@ -45,6 +47,7 @@ def test_log_out(browser):
 @allure.feature("Log out")
 @allure.story("Inalid log out")
 @allure.title("Invalid log out on purpose for red test")
+@pytest.mark.xfail(reason='this test is expected to fail on purpose')
 def test_failed_log_out(browser):
     login_page = LoginPage(browser)
     login_page.open() \
